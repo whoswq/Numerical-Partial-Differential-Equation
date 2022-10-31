@@ -32,213 +32,352 @@
 \newcommand{\pdv}[2]{\frac{\partial{#1}}{\partial{#2}}}
 \def\degree{$^{\circ}$}
 \def\celsius{$^{\circ}\mr{C}$}
-\title{\textbf{实验一 \ce{SrO}-\ce{Al2O3}二元体系中几种荧光材料的合成和表征\cite{inorganic_chemistry_1}}}
-\author{王崇斌\;1800011716}
+\title{\textbf{偏微分方程数值解上机作业1}}
+\author{王崇斌\;2201110455}
 \makeatletter
 \makeatother
 \begin{document}
 	\pagestyle{fancy}
 	\pagestyle{fancy}
-    \lhead{无机化学实验}
+    \lhead{偏微分方程数值解}
 	\chead{}
 	\rhead{\today}
 	\maketitle
     \thispagestyle{fancy}
-	\section{实验目的}
-	\begin{enumerate}
-		\item 学习高温固相合成的基本方法
-		\item 学习软化学制备前驱体的基本方法
-		\item 了解固体荧光材料的发光原理和基本表征方法
-	\end{enumerate}
-	\section{实验原理}
-	\subsection{高温固相合成}
-	高温固相合成通常用于合成无机固体材料。反应中存在多个固体物相，反应主要
-	发生在固态反应物的接触面上，同时在其上形成产物层；然后反应物通过扩散作用跨过产物层
-	进一步反应。由于固相难以混合充分，反应物颗粒之间的接触面积大小受反应物颗粒直径影响明显
-	，同时由于固体中原子扩散速率远低于液相或气相（晶格比较稳定，常温下只会在平衡位置
-	附近振动），因此固相化学反应通常需要在高温下进行（增加固体中原子的扩散速率，甚至
-	熔化反应物或者产物以达到充分混合的目的），反应时间较长，难以得到高纯度、均匀的、物相单一
-	的产物。
-	\par 
-	通常影响固相化学反应速率的因素都有：反应温度（这个前面讨论了），反应物混合的均匀程度（决定了
-	反应物之间的接触面积），反应物物相（不同的物相有着不同的表面能和稳定性），添加助溶剂（提高
-	反应物表面离子的扩散速率），等等。
-	\subsection{软化学制备前驱体}
-	除了机械研磨之外，还可以针对不同的反应体系设计出利用化学反应来充分混合反应物的方法，这个
-	过程称为软化学制备反应前驱体。其主要的思路是利用水溶液稳定均一的特性，从溶液中
-	想办法“提取”出固态的前驱体，这就需要利用反应物的化学性质来设计制备前驱体的反应。
-	通常使用的方法有\textbf{共沉淀法}、\textbf{溶胶凝胶法}、\textbf{燃烧法}。
-	在本实验中使用了燃烧法。
-	\par 共沉淀法是指在均相溶液中加入沉淀剂，使多种阳离子以\textbf{共晶}的方式沉淀下来，理想
-	情况下共沉淀物可以达到原子量级的混合程度，混合效果远高于机械研磨法。
-	但是由于不同物种溶度积不同，很有可能发生偏析——即某个物种优先沉淀的现象，
-	从而导致混合并不均匀。因此沉淀剂的选择和沉淀条件（ph、温度等）的控制就显得尤为重要。
-	溶胶凝胶法利用金属醇盐的缓慢水解，然后逐渐缩聚最终生成凝胶的过程将阳离子充分混合。燃烧法
-	通常是在金属硝酸盐溶液中加入还原剂，加热浓缩，而后升高温度让硝酸根与还原剂发生激烈的氧化
-	还原反应，可以在较短的时间内获得混合充分的金属氧化物混合物。通常加入的还原剂是含有羟基的
-	羧酸比如柠檬酸或者甘氨酸和尿素这类能够起到一定螯合作用的还原剂。
-	\subsection{荧光材料的发光原理}
-	荧光材料一般由\textbf{基质}和\textbf{激活剂}组成。基质材料通常是由满壳层离子构成的稳定
-	固体化合物，禁带较宽，在可见光范围内没有吸收；激活剂是不满壳层的离子，以固溶形式溶解在基
-	质中，电子在壳层内或邻近壳层之间跃迁产生吸收和荧光发射。\ce{SrO-Al2O3}二元体系中几种
-	不同Sr-Al比例的铝酸锶相均是优良的基质材料，\ce{Eu^{2+}}可以作为该基质中的优良激活剂。
-	\ce{Eu^{2+}}的激发过程为$4f^7\to4f^ 65d ^1$的$d-f$跃迁，其中$f$电子构成受配位环境
-	影响较小的窄能级，$5d$轨道受配位场影响较为明显。因此\ce{Eu^{2+}}周围的配位场越强，$d$
-	轨道分裂越大，导致$d$轨道形成的能带下沿降低，因此基质的组成（在本实验中表现为\ce{Sr}与\ce{Al}
-	）明显影响着其中\ce{Eu^{2+}}的发光行为。
-	\par 
-	如果进一步在这样的晶体中掺入\textbf{陷阱离子}，有可能得到\textbf{长余辉材料}。\ce{Dy ^{3+}}
-	是一种合适的陷阱离子，在紫外光或者可见光激发下，激活剂离子\ce{Eu^{2+}}从基态跃迁到激发态（
-	上一段中描述过的$d-f$跃迁），部分激发态电子直接跃迁至基态发出波长$\approx 520\mr{nm}$的
-	绿色荧光；另一部分激发态电子在热微扰下进入导带，随后被\ce{Dy^{3+}}形成的陷阱能级
-	捕获（这个中心含有\ce{Dy^{3+}}因此有吸引电子的倾向），同时将能量储存在该激发态能级中。当
-	此激发态收到热微扰时，将电子释放回导带，并通过\ce{Eu^{2+}}的激发态跃迁回基态，同时发出荧光。
-	\section{实验操作步骤}
-	实验地点：北京大学化学院D区3楼第一教学实验室2号实验台
-	\par 
-	实验时间：2021年3月26日（星期五）
-	\subsection{高温固相反应合成荧光材料}
-	实验者被分配到S2组，目标合成物为\ce{Sr_{3.84}Al_{14}O_{25}}:0.04\ce{Eu^{2+}},0.08\ce{Dy^{3+}}。
-	\par 
-	称取
-	\footnote{括号前为理论需要量，括号中为实际称取量}
-	1.3338g(1.3333g)\ce{SrCO_{3}},2.1841g(2.1835g)\ce{Al(OH)_{3}},0.0141g(0.0147g)\ce{Eu_2O_3}
-	,0.0298g(0.0314g)\ce{Dy_2O_3},\\0.1008g(0.1008g)\ce{H_3BO_3}，
-	将这些固体粉末放置于玛瑙研钵中，加入少量无水乙醇使体系呈现出粘稠状，用力研磨15分钟（研磨是否
-	充分直接决定了产物的质量），避免原料溅出。
-	\par
-	将上述研磨过的粉末装入氧化铝坩埚，墩实，在样品表面放上几根碳棒
-	\footnote{注意！实验室中有两种碳棒，一种表面光滑不易掉渣（看起来更像石磨棒），另一种
-	颜色更黑容易掉渣，不要将容易掉渣的碳棒放入坩埚中，否则产物表面回沾上难以去除的碳，使
-	产物色泽变差。这是实验者实验中遇到的问题。}，盖上坩埚盖后放入大坩埚中，加入碳棒后盖上
-	套埚盖，移入马弗炉快速升温至$\approx 1300$\celsius，恒温2小时，降温至1000\celsius
-	后出炉，冷却至室温将样品取出，可以明显观察到产物为淡黄绿色块状，与放入的反应物
-	形状有很明显不同。
-	\par 
-	去除样品表面的碳棒，同时刮去粘在样品上的碳粉，将样品转移到玛瑙研钵中，盖好防溅有机玻璃板，
-	将样品敲碎研细，分出一少半装入自封袋。
-	\subsection{燃烧法合成荧光材料前驱体}
-	目标：合成0.01\ce{mol}\ce{Sr_{0.96}Al_{2}O_{4}}:\ce{0.01Eu^{2+}},\ce{0.02Dy^{3+}}
-	荧光材料前驱体
-	\paragraph{配置A溶液}
-	称取\footnote{括号内为实际使用量}
-	2.03g(2.0303g)\ce{Sr(NO_3)_2},7.50g(7.5104g)\ce{Al(OH)_3*9H_2O},0.03g(0.0329g)\ce{Eu(NO_3)_3}\\
-	0.09g(0.0914g)\ce{Dy(NO_3)_3},40-50mg(0.0430g)\ce{H_3BO_3}，放入\textbf{石英烧杯}
-	\footnote{注意区分石英烧杯和普通的烧杯}
-	中，加入12ml去离子水，磁力加热搅拌至完全溶解。
-	\paragraph{配置B溶液}
-	称取5.40g(5.40g)尿素，加入6ml去离子水，磁力加热搅拌至溶液澄清。
-	\paragraph{制备凝胶}
-	将B溶液加入A溶液中，加热搅拌下蒸发一定水分，前驱体浓缩至粘稠半透明凝胶时（注意
-	快蒸干时会观察到溶液剧烈产生气泡，一定要在这个阶段之前停止加热，否则在冷却时溶液固化
-	导致磁子难以取出）取出磁子停止加热。
-	\paragraph{凝胶燃烧}
-	擦干石英烧杯外侧的水渍，将其移入已预热的500摄氏度热解炉中，前驱体会在其中沸腾起泡，
-	泡沫状的前驱体将充满整个烧杯，当水快要蒸干时可以看到有淡黄色气体放出，同时前驱体会从内而外
-	燃烧，放出红黄色火焰，持续时间较短。燃烧结束后产生白色疏松产物（此时还可以观察到有
-	蒸汽产生），盖上恒温盖恒温10min后取出，冷却回收。
-	\section{荧光材料的表征}
-	\subsection{发光性能的表征}
-	表征仪器：Nanolog红外荧光测试系统
-	\par
-	将样品测试架（铜制）放在平板玻璃上，使样品架紧贴玻璃。将研细的样品粉末倒入凹槽，
-	用压紧棒将样品间的空气排出，再用力将样品压实，压紧后在样品背面贴上黑胶布避光，
-	正面贴上盖玻片保护。翻转检查，样品面应于样品架平面齐平。
-	\par
-	发光光谱测试条件：根据样品选择合适的激发波长和发射波长记录范围。
-	数据采集间隔1 nm；激发狭缝5 nm；发射狭缝0.5 nm；积分时间0.1 s。
-	测试在激发150s达到饱和后进行。
-	\par
-	储能余辉衰减曲线测试条件：根据样品选择合适的激发波长和发射波长记录范围。
-	数据采集间隔0.1 s；激发狭缝1.1 nm；发射狭缝3.0 nm；测试时间范围:0.1-300s，在测试
-	进行150s后激发饱和时停止激发，测试余晖衰减曲线。
-	\subsection{物相的鉴定}
-	表征仪器：岛津XRD-600
-	\par
-	将样品框放在平板玻璃上，使样品框紧贴玻璃。将研细的样品粉末倒入凹槽中，用另一块载玻片将样品压实。
-	翻转检查，样品面应于样品架平面齐平，竖直样品框时样品不掉落。
-	测试条件：铜靶，Ni滤波器，X射线管电压/电流：40 kV/20 mA，扫描速度5°/分，2θ扫描范围19.5° ~ 32.5°。
-	发射狭缝（DS）：D1-1.7 mm，防散射狭缝（SS）：S1-0.6 mm，接收狭缝（RS）：0.3 mm。
-	\section{实验结果讨论}
-	\subsection{发光性能分析}
-	表格\ref{table of fluorescence}给出了S2组产物荧光的基本数据，图\ref{S2 fluorescence spectrum}
-	展示了S2小组的各个样品的发射光谱，可以看出实验者制备的样品有着较好的荧光效果，如果在烧制时
-	选择质量好的碳棒，减少样品中吸附的碳，有可能会体现出更好的荧光性能。荧光性能较好的另一个原因
-	可能与准备前驱物时研磨充分，准备的待检测样品表面比较平整有很大关系。
-	\par 
-	图\ref{S2 fluorescence residual}给出了储能和余辉衰减曲线。从表\ref{table of fluorescence}
-	中数据可以看出发射强度和余辉的强度呈现出正相关
-	。尝试了很久考虑通过指数衰减的函数来拟合余辉
-	衰减的过程，但是效果不佳，可能的原因是余辉衰减速率远高于指数衰减的速率。但是能看到
-	一个明显的趋势，所有样品的余辉衰减非常迅速，这与日常生活中遇到的长余辉材料很不相同，
-	个人推测的结果是1.烧结的过程中时间略短，产物没有形成很好的晶相（晶体缺陷较多的话会影响
-	荧光）2.制样的过程中研磨了产品，破坏了其中生成的晶体结构，长程有序的结构被破坏后会影响
-	发光效率。
-	\paragraph{产物的荧光相对强度}
-	实验者制作S2，样品编号07，荧光绝对强度为164851（标准为172318），荧光相对强度为
-	$95.7\%$。
-	\paragraph{产物的余辉相对强度}
-	实验者制作S2，样品编号07，余辉绝对强度为1590（标准为1700），余晖的相对强度为
-	$93.5\%$。
-	\begin{table}[htbp]
-	\caption{S2样品的发光性能}%标题
-	\centering%把表居中
-	\begin{tabular}{cccccc}%四个c代表该表一共四列，内容全部居中
-	\toprule%第一C道横线
-	学号 & 编号 & 荧光绝对强度 & 荧光相对强度 & 余辉绝对强度 & 余辉相对强度 \\
-	\midrule%第二道横线 
-	1600011744 & 01 & 123641 & $71.7\%$ & 1210 & $71.2\%$ \\
-	1800011784 & 05	& 152989 & $88.8\%$ & 1860 & $109.4\%$ \\
-	1800011836 & 06 & 172318 & $100\%$ & 1700 & $100\%$ \\
-	1800011716 & 07 & 164851 & $95.7\%$ & 1590 & $93.\%5$ \\
-	1900011758 & 09 & 110090 & $63.9\%$	& 950 & $55.9\%$ \\
-	\bottomrule%第三道横线
-	\end{tabular}
-	\label{table of fluorescence}
-	\end{table}
+
+	\section{单位圆盘上的Poisson方程}
+
+	\begin{equation}
+		\left\{
+			\begin{aligned}
+				&-\Delta u = 1, \quad (x, y) \in B\\
+				&u(x, y) = 0, \quad (x, y) \in \partial B\\
+				&B = \{(x, y), x^2 + y^2 < 1\}
+			\end{aligned}
+		\right.
+	\end{equation}
+
+	\subsection{极坐标中的差分格式}
+	利用极坐标中Laplace算子的表达式$\dps\Delta = \frac{1}{r}\pdv{}{r}\left(r\pdv{}{r}\right) + \frac{1}{r^2}\pdv{^2}{\theta^2}$
+	, 可以将上述直角坐标中的Poisson方程改写为如下形式, 额外补充了圆心处的有界性条件:
+	\begin{equation}
+		\left\{
+			\begin{aligned}
+				&-\frac{1}{r}\pdv{}{r}\left(r\pdv{u}{r}\right) - \frac{1}{r^2}\pdv{^2u}{\theta^2} = 1, \quad (r, \theta) \in (0, 1)\times[0, 2\pi)\\
+				&u(1, \theta) = 1, \quad \theta \in [0, 2\pi)\\
+				&\lim_{r \to 0^+} \pdv{u}{r} = 0, \quad \theta \in [0, 2\pi)
+			\end{aligned}
+		\right.
+	\end{equation}
+	可以看到方程与边界条件都具有$\theta$方向的平移对称性(或者说是直角坐标中的旋转对称性), 因此
+	可以推断方程的解只是$r$的函数, 上述方程进一步可以改写为一个二阶常微分方程的边值问题:
+	\begin{equation}
+		\left\{
+			\begin{aligned}
+				&-\frac{1}{r}\dv{}{r}\left(r\dv{u}{r}\right) = 1, \quad r\in(0, 1)\\
+				&u(1) = 0\\
+				&\left.\dv{u}{r}\right|_{r = 0+} = 0
+			\end{aligned}
+		\right.
+		\label{poisson r ode}
+	\end{equation}
+	为了利用半整点法构造$r=0$处的边界条件, 需要仔细构造网格, 令$\Delta r = \frac{1}{N-0.5},\,r_j = \frac{j - 0.5}{N - 0.5},\, j = 0, 1,\cdots, N$, 在这样的网格下$r_{0.5} = \frac{r_0 + r_1}{2}$
+	为数轴上$r=0$的点, 采用中心差分逼近内点处的导数, 在$r_N$处采用Dirichlet边界条件, 
+	在$r = 0$处采用半整点法构造边界条件, 
+	得到如下差分格式:
+	\begin{equation}
+		\left\{
+			\begin{aligned}
+				& -\frac{1}{\Delta r^2\cdot r_j}\left[r_{j + 0.5}\left(u_{j+1} - u_j\right) - r_{j - 0.5}\left(u_j - u_{j - 1}\right)\right] = 1, \quad j = 1,\cdots, N-1\\
+				&u_{N} = 0\\
+				&\frac{u_1 - u_0}{\Delta r} = 0
+			\end{aligned}
+		\right.
+	\end{equation}
+	利用边界条件, 上述差分方程可以转化为N-1个未知数的三对角线性方程组:
+	\begin{equation}
+		\begin{bmatrix}
+			\frac{r_{1.5}}{r_1} & -\frac{r_{1.5}}{r_1} & & & \\
+			 & \ddots & & & \\
+			 & -\frac{r_{j - 0.5}}{r_j} & 2 & -\frac{r_{j + 0.5}}{r_j} & \\
+			 & & & \ddots & \\
+			 & & & -\frac{r_{N - 1.5}}{r_{N-1}} & 2
+		\end{bmatrix}
+		\cdot
+		\begin{bmatrix}
+			u_1 \\
+			\vdots\\
+			u_j\\
+			\vdots\\
+			u_{N-1}
+		\end{bmatrix}
+		=
+		\begin{bmatrix}
+			\Delta r^2\\
+			\vdots \\
+			\Delta r^2 \\
+			\vdots \\
+			\Delta r^2
+		\end{bmatrix}
+	\end{equation}
+	求解这个线性方程组, 即可得到Poisson方程的解.
+	
+	\subsection{精确解与数值解的比较}
+	将方程[\ref{poisson r ode}]两边同时乘$r$后积分, 再除以$r$积分, 可以得到不考虑边值时的方程的通解:
+	\begin{equation}
+		u = -\frac{r^2}{4} + C_1\ln r + C_2
+	\end{equation}
+	带入[\ref{poisson r ode}]的边值条件后可以得到方程的精确解:
+	\begin{equation}
+		u = -\frac{r^2}{4} + \frac{1}{4} = -\frac{x^2 + y^2}{4} + \frac{1}{4}
+	\end{equation}
+	数值计算时采用LU分解求解线性方程组, 使用了之前学习某课程时编写的数值线性代数代码
+	(My\_Matrix.cpp, My\_Matrix.h), 由于矩阵很小因此没有对三对角求解做特殊优化. 
+	计算、编译、绘图程序分别参见 1\_poisson\_solver.cpp, compile1.bat, 1\_poisson\_plot.py
+	. 将$N_r = 8, 16$的数值结果与精确结果绘图比较, 参见图(\ref{1 poisson Nr 8}), (\ref{1 poisson Nr 16}), 精度竟然会如此之高.
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[scale=0.50]{S2fluorescence.pdf}
-		\caption{S2小组样品的发射光谱}
-		\label{S2 fluorescence spectrum}
+		\includegraphics[scale=0.7]{1_poisson_Nr_8.pdf}
+		\caption{$N_r$ = 8时数值解与精确解的结果比较}
+		\label{1 poisson Nr 8}
 	\end{figure}
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[scale=0.50]{S2residual.pdf}
-		\caption{实验者样品的储能和余辉衰减曲线}
-		\label{S2 fluorescence residual}
+		\includegraphics[scale=0.7]{1_poisson_Nr_16.pdf}
+		\caption{$N_r$ = 16时数值解与精确解的结果比较}
+		\label{1 poisson Nr 16}
 	\end{figure}
-	\subsection{物相分析}
+
+	\section{扩散方程的初边值问题}
+	\begin{equation}
+		\left\{
+			\begin{aligned}
+				&\pdv{u}{t} = \pdv{^2U}{x^2},\quad x\in(0, 1),\,t > 0\\
+				&u(x, 0) = \frac{x^2}{2}, \quad x\in [0, 1]\\
+				&u(0, t) = 0, \, \pdv{u}{x}(1, t) = 1,\quad t > 0
+			\end{aligned}
+		\right.
+	\end{equation}
+
+	\subsection{显格式的后验误差估计}
+	这一题由于给定了$\Delta x$, 使用半整点法无法解决, 被迫尝试使用影子节点法构造边界条件, 
+	在[0, 1]之间按照题目给定间距$\Delta x$插入N个点, 使得$x_0 = 0, \,x_N = 1$, 在$x_N$右侧\
+	$\Delta x$处插入影子节点$x_{N+1}$, 差分方程可以写为:
+	\begin{equation}
+		\left\{
+			\begin{aligned}
+				&\frac{u_{j}^{m+1} - u_{j}^{m}}{\Delta t} = \frac{1}{\Delta x^2}\left(u_{j+1}^{m} - 2u_{j}^{m} + u_{j - 1}^{m}\right), \quad j = 1, 2, \cdots, N\\
+				&u_j^{0} = \frac{x_j^2}{2},\quad j = 0, 1, \cdots, N\\
+				&u_{0}^{m} = 0,\quad m > 0\\
+				&\frac{u_{N+1}^m - u_{N-1}^m}{2\Delta x} = 1, \quad m > 0
+			\end{aligned}
+		\right.
+	\end{equation}
+	将边界条件带入可以得到如下的显式递推关系, 其中网格比$\dps\mu = \frac{\Delta t}{\Delta x^2}$:
+	\begin{equation}
+		\left\{
+			\begin{aligned}
+				&u_{j}^{m+1} = \mu(u_{j+1}^m + u_{j-1}^m) + (1-2\mu)u_{j}^m, \quad j = 1, 2, \cdots, N-1\\
+				&u_{N-1}^{m+1} = 2\mu(\Delta x + u_{N-1}^{m}) + (1 - 2\mu)u_{N}^{m}
+			\end{aligned}
+		\right.
+	\end{equation}
+	编写程序2\_diffusion\_explicit.cpp计算不同网格参数时$T=1$的解
+	(编译使用命令g++ 2\_diffusion\_explicit.cpp -o 2\_diffusion\_explicit.exe -O3), 
+	使用程序2\_1\_error.py计算收敛阶, 计算时使用公式:
+	\begin{equation}
+		\ln ||U_h - U_{h/2}|| \approx \ln [(1 - 2^{-\alpha})C] - \alpha \ln h^{-1}
+	\end{equation}
+	可以得到如图(\ref{2-1-error})所示的收敛阶示意图, 
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[scale=0.60]{S2-1800011716.pdf}
-		\caption{实验者样品的XRD图谱}
-		\label{S2 XRD}
+		\includegraphics[scale=0.7]{2_1_error.pdf}
+		\caption{扩散方程显式格式后验误差分析示意图}
+		\label{2-1-error}
 	\end{figure}
-	观察实验者样品的图谱\ref{S2 XRD}，可以看到衍射角在28\degree - 30 \degree 处有三个明显的
-	峰，对比标准谱图可知这有可能是\ce{SrAl_2O_4}和\ce{SrAl_4O_7}的衍射峰，但是对比25 \degree 
-	附近的衍射峰可知，不可能是\ce{Sr_Al_4O_7}产生的衍射峰，只可能是\ce{SrAl_2O_4}产生的
-	衍射峰，这同时给出了20 \degree 两侧衍射峰的来源
-	。25 \degree 右侧的衍射峰是\ce{Sr_4Al_14O_25}产生的，同时观察28 \degree 左侧和31 \degree 右侧
-	的小峰，可以印证\ce{Sr_4Al_14O_25}的存在。个人认为32 \degree 右侧的衍射峰是\ce{SrAl_12O_19}产生的。
+	选取后两个数据点计算收敛阶, 可以得到两种范数下的收敛阶为$\alpha_{\mr{L}^{2}} = 2.044,\,\alpha_{\mr{L}^{\infty}} = 2.003$
+
+	\subsection{Crank-Nicolson格式}
+	同样使用影子节点法处理右端边界条件, 将Crank-Nicolson格式应用于此问题, 可以给出如下差分格式:
+	\begin{equation}
+		\left\{
+			\begin{aligned}
+				&\frac{u_j^{m+1} - u_j^m}{\Delta t} = \frac{1}{2}\left(\frac{u_{j+1}^m - 2u_j^{m} + u_{j-1}^{m}}{\Delta x^2} + \frac{u_{j+1}^{m+1} - 2u_{j}^{m+1} + u_{j-1}^{m+1}}{\Delta x^2}\right), \quad j = 1, 2,\cdots, N\\
+				&u_0^m = 0,\quad m > 0\\
+				&\frac{u_{N+1}^m - u_{N-1}^{m}}{2\Delta x} = 1, \quad m > 0
+			\end{aligned}
+		\right.
+	\end{equation}
+	上经过一些运算, 上式所示的单步演化可以转化为一个三对角线性方程组的求解, 其中已经带入了$x=0, x=1$
+	处边界条件:
+	\begin{equation}
+		\begin{bmatrix}
+			\mu + 1 & -\frac{\mu}{2} & & & \\
+			 & \ddots & & & \\
+			 & -\frac{\mu}{2} & \mu + 1 & -\frac{\mu}{2} & \\
+			 & & & \ddots & \\
+			 & & & -\mu & \mu + 1
+		\end{bmatrix}
+		\cdot
+		\begin{bmatrix}
+			u_1^{m+1} \\
+			\vdots\\
+			u_j^{m+1}\\
+			\vdots\\
+			u_{N}^{m+1}
+		\end{bmatrix}
+		=
+		\begin{bmatrix}
+			\frac{\mu}{2}u_2^m + (1-\mu)u_1^m\\
+			\vdots \\
+			\frac{\mu}{2}u_{j+1}^m + (1-\mu)u_j^m + \frac{\mu}{2}u_{j-1}^m\\
+			\vdots \\
+			2\mu\Delta x + \mu u_{N-1}^m + (1-\mu)u_{N}^m
+		\end{bmatrix}
+	\end{equation}
+	编写程序2\_diffusion\_CN.cpp计算不同时刻的$u$(编译使用compile2.bat),
+	线性方程组的求解采用LU分解方法, 使用程序2\_2\_CN\_plot.py绘制图像. 将以$u(x, 0) = \frac{x^2}{2}$
+	为初值的解作图, 参见图(\ref{2-2-CN-1}). 
+	\begin{figure}[htbp]
+		\centering 
+		\includegraphics[scale=0.7]{2_2_CN_1.pdf}
+		\caption{Crank-Nicolson格式求解以$u(x, 0) = \frac{x^2}{2}$为初值的扩散方程的解}
+		\label{2-2-CN-1}
+	\end{figure} 
+	在程序2\_diffusion\_CN.cpp中将初始条件替换为$u(x, 0) = x^2 - x$, 重复编译计算并绘图, 参见图(\ref{2-2-CN-2}). 
+	\begin{figure}[htbp]
+		\centering 
+		\includegraphics[scale=0.7]{2_2_CN_1.pdf}
+		\caption{Crank-Nicolson格式求解以$u(x, 0) = x^2 - x$为初值的扩散方程的解}
+		\label{2-2-CN-2}
+	\end{figure} 
+	观察这两种不同初值条件下扩散方程解的行为, 发现两者在足够长的时间后趋于同样的解$u(x) = x$, 这
+	说明在适当的边界条件下(比如一端流入一端流出, 总不能是两端都流入), 扩散方程存在
+	稳态解$u(x, +\infty)$, 如果稳态解存在, 对应的就是同样边界条件下Laplace(Poisson)方程的解.
+
+	\section{一阶波方程的初边值问题}
+	\begin{equation}
+		\left\{
+			\begin{aligned}
+				&\pdv{u}{t} + \pdv{u}{x} = 0,\quad x\in(0, 5),\,t > 0\\
+				&u(x, 0) = \e^{-5(x - 1)^2}, \quad x\in [0, 5]\\
+				&u(-1, t) = 0, \quad t > 0
+			\end{aligned}	
+		\right.
+	\end{equation}
+	\subsection{一阶upwind方法的后验误差估计}
+	由于不涉及复杂边界条件的处理, 可以采用[-1, 5]之间间距为$\Delta x$的均匀网格, 由于
+	流速大于0, 迎风格式可以写为:
+	\begin{equation}
+		\left\{
+			\begin{aligned}
+				&u_j^{m+1} = (1 - \nu)u_j^m + \nu u_{j-1}^m, \quad m > 0,\,j = 1, 2, \cdots, N\\
+				&u_0^m = 0,\quad m > 0\\
+				&u^0_j = \e^{-5(x_j - 1)^2}, \quad j = 0, 1, \cdots, N
+			\end{aligned}
+		\right.
+	\end{equation}
+	其中网格比选为$\nu = 0.5$, $\Delta t = \nu \cdot \Delta x$, 
+	编写程序3\_1\_upwind.cpp计算不同$\Delta x$时的数值结果, 使用程序3\_1\_error.py(
+	后验误差估计的逻辑与第二题类似), 可以得到如图(\ref{3-1-upwind})所示的收敛阶示意图, 
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=0.7]{3_1_error.pdf}
+		\caption{upwind格式的后验误差分析示意图}
+		\label{3-1-upwind}
+	\end{figure}
+	可以根据后两个数据点计算出两种范数下的收敛阶为$\alpha_{\mr{L}^{2}} = 0.705,\,\alpha_{\mr{L}^{\infty}} = 0.646$, 能够看出收敛阶并不是非常接近理论值1, 观察示意图, 可以看出收敛阶还没有
+	对$\Delta x$收敛, 这可能是因为upwind格式精度较低导致收敛阶收敛变慢, 
+	预计进一步减小$\Delta x$可能会得到更准确的收敛阶. 令$\Delta x = \frac{1}{64}, \frac{1}{128}, \frac{1}{256}$, 重新绘制收敛阶的示意图(\ref{3-1-upwind-new}), 
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=0.7]{3_1_error_new.pdf}
+		\caption{upwind格式的后验误差分析示意图}
+		\label{3-1-upwind-new}
+	\end{figure}
+	此时计算出两种范数下的收敛阶为$\alpha_{\mr{L}^{2}} = 0.950,\,\alpha_{\mr{L}^{\infty}} = 0.940$
+	, 这就体现出了理论上的收敛阶.
+
+	\subsection{不同网格比时upwind格式的行为}
+	继续使用上一题的程序, 修改其中$\nu = 0.5, 1, 2$, 维持$\Delta x = \frac{1}{32}$, 将得到的
+	解绘制在图(\ref{3-2-upwind-compare})中, 
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=0.7]{3_2_upwind_compare.pdf}
+		\caption{使用不同网格比$\nu = 0.5, 1, 2$时波方程的解}
+		\label{3-2-upwind-compare}
+	\end{figure}
+	观察网格比$\mu$不同的解, 可以观察到$\nu = 1$时的解与精确解严格一致, 而$\nu = 0.5$数值解有
+	明显的耗散现象(波峰降低). $\nu = 2$的解不满足CFL条件, 可以看出高斯波形的边缘开始出现小于0的
+	部分(震荡), 而在波峰处开始出现增长(发散), 这表明不满足CFL条件的数值解不能正确描述方程的演化.
 	\par 
-	对比31 \degree 右侧和30 \degree 左侧的衍射峰，容易判断\ce{SrAl_2O_4}是产物的主要成分，这与合成
-	的目标相去甚远，主要产物是S1组的产物，这点也从荧光数据中得到了证实，两组的荧光光谱事实上
-	没有明显的差异。这种普遍的情况可能说明了S2的合成方法有些问题。
-	\section{思考题}
-	\paragraph{1.}在平衡反应中，反应物和产物的浓度均不为零。这一说法对固相反应适用吗？
-	固相化学反应和溶液化学反应有何不同？它们的完成程度受到什么规律的支配？
-	\paragraph{答：}如果固相化学反应有机会进行到热力学平衡的阶段，就会受化学平衡规律支配，
-	即反应物和产物浓度均不为零。固相化学反应由于固体物理性质的影响，反应物接触不充分、无法充分混合等
-	导致反应在动力学上非常不利，因此固相化学反应主要受到动力学支配；而溶液中的化学反应由于溶液均一稳定的性质，一般来说可以得到充分地混合与接触，
-	因此溶液中地反应主要受到热力学支配。
-	\paragraph{2.}固相化学反应能够在室温下以较高的速率进行吗？需要什么条件？
-	\paragraph{答：}由于动力学上的阻碍，希望固相反应在室温下快速进行的唯一方法就是通过机械研磨
-	提供额外的能量。
-	\paragraph{3.}什么是“非整比化合物”？其有什么特殊性质？本实验合成的产物是否属于非整比化合物？
-	\paragraph{答：}非整比化合物指的是组成中各类原子的相对数目不能用几个小的整数比表示的化合物。
-	其组成可以在较小范围内变化而不改变整体的结构，这给参杂其他金属离子提供了机会，我认为我们合成的
-	材料属于非整比化合物。
-	\bibliographystyle{plain}
-	\bibliography{ref}
+	利用Von-Neumann分析, 能够得到增长因子和相位的表达式:
+	\begin{equation}
+		\left\{
+			\begin{aligned}
+				& |\lambda_k|^2 = 1 - 4\nu(1-\nu)\sin^2\left(\frac{k\Delta x}{2}\right)\\
+				&\arg\lambda_k = -\arctan\left[\frac{\nu\sin k\Delta x}{(1-\nu) + \nu\cos k\Delta x}\right]
+			\end{aligned}
+		\right.
+	\end{equation}
+	可以看到当$\nu = 1$时, 对于任意波数$k$的Fourier波形, 均不会产生振幅和相位的误差, 因此从
+	理论上讲此种情形的数值解是精确的.
+
+	\subsection{Lax-Wendroff格式}
+	如果利用Lax-Wendroff格式, 需要在右边边界上补充一个边界条件, 为了更好观察到高斯波形的传播
+	(也是为了便于数值计算), 我打算采用无反射边界条件, 补充影子节点$u_{N+1}^m = u_N^m$, 
+	可以构造如下的差分格式:
+	\begin{equation}
+		\left\{
+			\begin{aligned}
+				&u_j^{m+1} = -0.5 \nu(1-\nu)u_{j+1}^m + (1 - \nu^2)u_j^{m} + 0.5 \nu(1+\nu)u_{j-1}^m, \quad j = 1, 2, \cdots, N\\
+				&u_{N}^m = u_{N+1}^m
+			\end{aligned}
+		\right.
+	\end{equation}
+	将边界条件带入可以得到显式递推关系:
+	\begin{equation}
+		\left\{
+			\begin{aligned}
+				& u_0^m = 0\\
+				& u_j^{m+1} = -0.5 \nu(1-\nu)u_{j+1}^m + (1 - \nu^2)u_j^{m} + 0.5 \nu(1+\nu)u_{j-1}^m, \quad j = 1, 2, \cdots, N - 1\\
+				& u_{N}^{m+1} = (-0.5 \nu + 1 - 0.5\nu^2)u_{N}^m + 0.5\nu(1+\nu)u_{N-1}^m
+			\end{aligned}
+		\right.
+	\end{equation}
+	在计算中采用$\nu = 0.5, \Delta x = 1/100$, 编写程序3\_3\_Lax\_Wendroff.cpp计算数值结果, 
+	编写程序3\_3\_LW\_plot.py绘制图像, 如图(\ref{3-3-LW-T0.5})(\ref{3-3-LW-T1.0})(\ref{3-3-LW-T1.5})(\ref{3-3-LW-T2.0})所示.
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=0.7]{3_3_LW_0_5.pdf}
+		\caption{T = 0.5时使用Lax-Wendroff格式求解与精确解的对比}
+		\label{3-3-LW-T0.5}
+	\end{figure}
+
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=0.7]{3_3_LW_1_0.pdf}
+		\caption{T = 1.0时使用Lax-Wendroff格式求解与精确解的对比}
+		\label{3-3-LW-T1.0}
+	\end{figure}
+
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=0.7]{3_3_LW_1_5.pdf}
+		\caption{T = 1.5时使用Lax-Wendroff格式求解与精确解的对比}
+		\label{3-3-LW-T1.5}
+	\end{figure}
+
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=0.7]{3_3_LW_2_0.pdf}
+		\caption{T = 2.0时使用Lax-Wendroff格式求解与精确解的对比}
+		\label{3-3-LW-T2.0}
+	\end{figure}
+	从图中可以看出, Lax-Wendroff作为一种高阶格式, 其精度相较于upwind有着本质的提升, 仔细
+	比较可以看出, 数值解在振幅和最值的角度很好地逼近了精确解, 而在相位上略慢于真实解, 这与理论上对
+	Lax-Wendroff格式的增长因子的分析是一致的($O(\Delta x^3)$的振幅误差, $O(\Delta x^2)$的相对相位误差). 
+
+
+
 \end{document}
